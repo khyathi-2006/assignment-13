@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather Forecast</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -29,17 +27,33 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    /* Add some styling for the task container to ensure it's centered if needed */
+    .task-container {
+      margin-top: 2rem; /* Add some space above the task container */
+      text-align: center; /* Center the content within the task container */
+    }
+    .task {
+      display: inline-block; /* Allows for centering with text-align on parent */
+      background-color: #4CAF50; /* Example background color */
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    .task:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
   <div class="bg-white rounded-3xl shadow-xl p-6 md:p-8 w-full max-w-lg">
-    <!-- Title -->
     <div class="flex items-center justify-center mb-6">
       <span class="text-4xl mr-3">☀️</span>
       <h1 class="text-3xl font-semibold text-gray-800">Weather Forecast</h1>
     </div>
 
-    <!-- Search Bar -->
     <div class="flex items-center space-x-2 mb-8">
       <input
         type="text"
@@ -55,13 +69,10 @@
       </button>
     </div>
 
-    <!-- Loading Spinner -->
     <div id="loading-spinner" class="loader mb-4"></div>
 
-    <!-- Error Message -->
     <div id="error-message" class="text-red-500 text-center mb-4 hidden"></div>
 
-    <!-- Weather Info: Hidden Initially -->
     <div id="current-weather-section" class="mb-8 hidden">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">Now in <span id="current-city">City</span></h2>
       <p class="text-gray-600 text-lg mb-2"><span id="current-time">--:--</span> | <span id="weather-description">---</span> <span id="weather-icon">☁️</span></p>
@@ -87,6 +98,11 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="task-container">
+    <h1>Select a Task</h1></a><p><br></p>
+    <a href="Task1.html" class="task">Task1 : Simple localStorage Save and Load form</a>
   </div>
 
   <script>
@@ -255,14 +271,4 @@
     // 🔸 Removed initial auto-fetch for Hyderabad
   </script>
 </body>
-</html>
-<h1>Select a Task</h1>
-<div class="task-container">
-    <a href="Task1.html" class="task">Task1 : Simple localStorage Save and Load form:
-
-</a>
-
-</div>
-</body>
-
 </html>
